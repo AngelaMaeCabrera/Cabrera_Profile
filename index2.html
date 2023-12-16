@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Computer Science Student</p>
+                <h1>Hi, I'm <span>Angela Mae</span><br> Cabrera</h1>
+            </div>
+        </div>
+    </div>
+	<!-----about----->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="me.jpg" alt="Angela Mae Cabrera">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+					<p>
+					Hello, I'm Angela Mae K. Cabrera, an 18-year-old resident born on August 20, 2005, 
+					currently residing in Brgy. Rizal, Makati City. Now, when it comes to my studies, 
+					I'm taking up BS Computer Science with a major in, you guessed it, Computer Science 
+					at the University of Makati. Why? Well, I'm all about being practical and getting 
+					hands-on with the tech world. My hobbies are watching movies and playing games and
+					i also like cooking.
+					</p>
+					
+					<div class="tab-titles">
+						<p class="tab-links active-link" data-tab="skills" onclick="opentab('skills')">Skills</p>
+						<p class="tab-links" data-tab="education" onclick="opentab('education')">Education</p>
+					</div>
+					<div class="tab-contents active-tab" id="skills">
+						<ul>
+							<li><span><b>C++</b></span><br>The first programming language I studied</li>
+							<li><span><b>Java</b></span><br>The 2nd programming language I studied</li>
+							<li><span><b>Visual Basics</b></span><br>The 3rd programming language I studied</li>
+						</ul>
+					</div>
+					<div class="tab-contents" id="education">
+						<ul>
+							<li><span><b>2020-2021</b></span><br>SHS at University of Makati, With High Honors</li>
+							<li><span><b>2022-2023</b></span><br>SHS at University of Makati, With High Honors</li>
+							<li><span><b>2023-2023</b></span><br>College at University of Makati</li>
+						</ul>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<script>
+		var tablinks = document.getElementsByClassName("tab-links");
+		var tabcontents = document.getElementsByClassName("tab-contents");
+		function opentab(tabname) {
+			for (tablink of tablinks) {
+				tablink.classList.remove("active-link");
+			}
+			for (tabcontent of tabcontents) {
+				tabcontent.classList.remove("active-tab");
+			}
+			document.querySelector(`.tab-links[data-tab="${tabname}"]`).classList.add("active-link");
+			document.getElementById(tabname).classList.add("active-tab");
+		}
+	</script>
+	
+	<!-----contact----->
+	<div id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="contact-left">
+					<h1 class="sub-title">Contact Me</h1>
+					<p><i class="fa-solid fa-paper-plane"></i>acabrera.k12150373@umak.edu.ph</p>
+					<p>09155967837</p>
+					<div class="social-icons">
+						<a href=""><i class="fa-brands fa-facebook"></i></a>
+						<a href=""><i class="fa-brands fa-instagram"></i></a>
+						<a href=""><i class="fa-solid fa-envelope"></i></a>
+					</div>
+				</div>
+				<div class="contact-right">
+					<form>
+						<input type="text" name="Name" placeholder="Your Name" required>
+						<input type="email" name="email" placeholder="Your Email" required>
+						<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+						<button type="submit" class="btn btn2">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
